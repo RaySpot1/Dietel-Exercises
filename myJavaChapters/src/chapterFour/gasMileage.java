@@ -2,10 +2,6 @@ package chapterFour;
 
 import java.util.Scanner;
 
-//prompt user for miles and gallons input
-//Collect user inputs
-// Divide miles input by gallons input
-// print result
 public class gasMileage {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
