@@ -6,32 +6,26 @@ public class ProductSumAverageSmallestLargest{
         Scanner nums = new Scanner(System.in);
 
         System.out.println("Enter three integers: ");
-        int firstInt = nums.nextInt();
-        int secondInt = nums.nextInt();
-        int thirdInt = nums.nextInt();
+        int num1 = nums.nextInt();
+        int num2 = nums.nextInt();
+        int num3 = nums.nextInt();
 
-        int sum = firstInt + secondInt + thirdInt;
-        System.out.printf("The Sum of %d, %d and %d is %d", firstInt, secondInt, thirdInt, sum);
+        int sum = num1 + num2 + num3;
+        System.out.printf("The Sum of %d, %d and %d is %d", num1, num2, num3, sum);
 
-        int product = firstInt * secondInt * thirdInt;
-        System.out.printf("%nThe product of %d, %d and %d is %d", firstInt, secondInt, thirdInt, product);
+        int product = num1 * num2 * num3;
+        System.out.printf("%nThe product of %d, %d and %d is %d", num1, num2, num3, product);
 
         int average = sum / 3;
-        System.out.printf("%nThe average of %d, %d and %d is %d", firstInt, secondInt, thirdInt, average);
+        System.out.printf("%nThe average of %d, %d and %d is %d", num1, num2, num3, average);
 
-        if(firstInt < secondInt && firstInt < thirdInt)
-            System.out.printf("%nSmallest = %d", firstInt);
-        if(secondInt < firstInt && secondInt < thirdInt)
-            System.out.printf("%nSmallest = %d", secondInt);
-        else
-            System.out.printf("%nSmallest = %d", thirdInt);
+        System.out.println("\nLargest value = " + maximum(num1, num2, num3));
 
-        if(firstInt > secondInt && firstInt > thirdInt)
-            System.out.printf("%nLargest = %d", firstInt);
-        if(secondInt > firstInt && secondInt > thirdInt)
-            System.out.printf("%nLargest = %d", secondInt);
-        else
-            System.out.printf("%nLargest = %d", thirdInt);
+
+    }
+
+    public static int maximum(int x, int y, int z){
+        return Math.max(x, (Math.max(x, z)));
     }
 }
 
