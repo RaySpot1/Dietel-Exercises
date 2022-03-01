@@ -4,20 +4,19 @@ import java.util.Scanner;
 
 public class Practice {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter three floating numbers: ");
+        display("Add calculator");
 
-        double num1 = input.nextDouble();
-        double num2 = input.nextDouble();
-        double num3 = input.nextDouble();
+        add(1000000, 500004);
 
-        double result = maximum(num1, num2, num3);
-
-        System.out.println("Maximum = " + result);
     }
 
-    public static double maximum(double x, double y, double z){
-        return Math.max(x, Math.max(y, z));
+    public static void add(int num1, int num2){
+        int result = num1 + num2;
+        System.out.println(result);
+    }
+
+    public static void display(String message){
+        System.out.println(message);
     }
 }

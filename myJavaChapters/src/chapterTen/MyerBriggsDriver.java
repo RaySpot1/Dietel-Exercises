@@ -6,9 +6,9 @@ public class MyerBriggsDriver {
         MyerBriggs briggs = new MyerBriggs();
         Scanner scanner = new Scanner(System.in);
 
-//        briggs.introvertExtrovertUsers();
-//        briggs.sensitiveIntuitiveUsers();
-//        briggs.thinkingFeelingUsers();
+        briggs.introvertExtrovertUsers();
+        briggs.sensitiveIntuitiveUsers();
+        briggs.thinkingFeelingUsers();
         briggs.judgingPerspectiveUser();
 
     }
