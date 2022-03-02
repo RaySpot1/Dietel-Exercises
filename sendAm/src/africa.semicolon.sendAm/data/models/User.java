@@ -6,6 +6,14 @@ public class User {
     private String phoneNumber;
     private String address;
 
+
+//    public User(String email, String fullName, String phoneNumber, String address) {
+//        this.email = email;
+//        this.fullName = fullName;
+//        this.phoneNumber = phoneNumber;
+//        this.address = address;
+//    }
+
     public String getAddress(){
         return address;
     }
@@ -30,8 +38,8 @@ public class User {
         this.fullName = fullName;
     }
 
-    public String setPhoneNumber(){
-        return phoneNumber;
+    public String setPhoneNumber(String phoneNumber){
+        return this.phoneNumber;
     }
     public void getPhoneNumber(String phoneNumber){
         this.phoneNumber = phoneNumber;
