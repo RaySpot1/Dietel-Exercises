@@ -1,5 +1,7 @@
 package africa.semicolon.sendAm.data.models;
 
+import africa.semicolon.sendAm.data.models.User;
+
 import java.util.List;
 
 public interface UserRepository {

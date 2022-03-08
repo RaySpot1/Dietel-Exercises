@@ -1,18 +1,13 @@
 package africa.semicolon.sendAm.data.models;
 
 public class User {
+
+    private String User;
     private String email;
     private String fullName;
     private String phoneNumber;
     private String address;
 
-
-//    public User(String email, String fullName, String phoneNumber, String address) {
-//        this.email = email;
-//        this.fullName = fullName;
-//        this.phoneNumber = phoneNumber;
-//        this.address = address;
-//    }
 
     public String getAddress(){
         return address;
@@ -27,6 +22,7 @@ public class User {
     }
 
     public void setEmail(String email){
+
         this.email = email;
     }
 
@@ -45,4 +41,19 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "User='" + User + '\'' +
+                ", email='" + email + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
+
+    public int count(){
+        return 0;
+    }
 }

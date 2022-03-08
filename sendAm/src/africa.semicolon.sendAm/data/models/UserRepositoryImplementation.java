@@ -14,9 +14,9 @@ public class UserRepositoryImplementation implements UserRepository {
 
     @Override
     public User findByEmail(String email) {
-        for(User aUser : data){
-            if(aUser.getEmail().equals(email));
-            return aUser;
+        for (User aUser : data) {
+            if (aUser.getEmail().equals(email))
+                return aUser;
         }
         return null;
     }
@@ -24,7 +24,7 @@ public class UserRepositoryImplementation implements UserRepository {
     @Override
     public void delete(String email) {
         User searchUser = findByEmail(email);
-        delete(searchUser);
+        data.remove(searchUser);
     }
 
     @Override

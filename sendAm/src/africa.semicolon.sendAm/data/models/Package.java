@@ -7,7 +7,7 @@ public class Package {
     private int id;
     private User owner;
     private PackageDescription description;
-    private final List<Status> statusList = new ArrayList();
+    private final List<Status> statusList = new ArrayList<>();
 
     public User getOwner(){
         return owner;

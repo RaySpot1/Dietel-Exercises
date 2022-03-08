@@ -1,9 +1,10 @@
 package africa.semicolon.sendAm.services;
 
+import africa.semicolon.sendAm.dtos.responses.FindUserResponse;
 import africa.semicolon.sendAm.dtos.responses.RegisterUserRequest;
 import africa.semicolon.sendAm.dtos.responses.RegisterUserResponse;
-import africa.semicolon.sendAm.exception.RegisterFailureException;
 import africa.semicolon.sendAm.exception.SendAmAppException;
+import africa.semicolon.sendAm.exception.UserNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -71,8 +72,41 @@ class UserServiceImplementationTest {
         RegisterUserRequest daveForm = createRegisterForm();
 
         RegisterUserResponse response = userService.register(daveForm);
-        assertEquals("David Oludare", response.getFullname());
+
+        assertEquals("David", response.getFullName());
+        assertEquals("seniordevdevil@gmail.com", response.getEmail());
     }
 
+    @Test
+    public void findRegisteredUserByEmailTest(){
+        RegisterUserRequest daveForm = createRegisterForm();
+        userService.register(daveForm);
+
+        FindUserResponse response = userService.findByEmail(daveForm.getEmailAddress().toLowerCase());
+
+        assertEquals("David Oludare", response.getFullName());
+        assertEquals("seniordevdevil@gmail.com", response.getEmail());
+    }
+
+    @Test
+    public void findingUnregisteredEmail_throwExceptionTest(){
+        RegisterUserRequest daveForm = createRegisterForm();
+        userService.register(daveForm);
+
+        assertThrows(UserNotFoundException.class, ()-> userService.findByEmail("emma@Gmail.com"));
+
+
+    }
+
+    @Test
+    public void findByUserEmailIsNotCaseSensitiveTest(){
+        RegisterUserRequest daveForm = createRegisterForm();
+        userService.register(daveForm);
+
+        FindUserResponse response = userService.findByEmail("seNiorDeVDevil@gmail.com");
+
+        assertEquals("David Oludare", response.getFullName());
+        assertEquals("seniordevdevil@gmail.com", response.getEmail());
+    }
 
 }
