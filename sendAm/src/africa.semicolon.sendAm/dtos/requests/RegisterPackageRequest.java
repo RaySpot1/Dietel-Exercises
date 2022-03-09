@@ -1,47 +1,80 @@
 package africa.semicolon.sendAm.dtos.requests;
 
-
-import africa.semicolon.sendAm.data.models.PackageDescription;
-import africa.semicolon.sendAm.data.models.Status;
-
 public class RegisterPackageRequest {
-    private int id;
-    private String emailAddress;
-    private PackageDescription description;
-    private Status status;
+    private int packageId;
+    private String email;
+    private String fullName;
+    private String phoneNumber;
+    private String address;
+    private String packageName;
+    private double weightInGrammes;
+    private String packageStatus;
 
-    public int getId() {
-        return id;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getEmailAddress() {
-        return emailAddress;
-    }
-
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
-    }
-
-    public PackageDescription getDescription() {
-        return description;
-    }
-
-    public void setDescription(PackageDescription description) {
-        this.description = description;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
 
+
+
+    public int getPackageId() {
+        return packageId;
+    }
+
+    public void setPackageId(int packageId) {
+        this.packageId = packageId;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPackageName() {
+        return packageName;
+    }
+
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
+    }
+
+    public double getWeightInGrammes() {
+        return weightInGrammes;
+    }
+
+    public void setWeightInGrammes(double weightInGrammes) {
+        this.weightInGrammes = weightInGrammes;
+    }
+
+    public String getPackageStatus() {
+        return packageStatus;
+    }
+
+    public void setPackageStatus(String packageStatus) {
+        this.packageStatus = packageStatus;
+    }
 }
 
