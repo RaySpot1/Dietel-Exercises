@@ -1,4 +1,4 @@
-package africa.semicolon.sendAm.data.models;
+package africa.semicolon.sendAm.data.repositories;
 
 import africa.semicolon.sendAm.data.models.User;
 

@@ -1,4 +1,6 @@
-package africa.semicolon.sendAm.data.models;
+package africa.semicolon.sendAm.data.repositories;
+
+import africa.semicolon.sendAm.data.models.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +10,7 @@ public class UserRepositoryImplementation implements UserRepository {
     @Override
     public User save(User aUser) {
         data.add(aUser);
-
+        System.out.println(aUser);
         return aUser;
     }
 
