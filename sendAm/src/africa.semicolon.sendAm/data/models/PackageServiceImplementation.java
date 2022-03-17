@@ -2,6 +2,7 @@ package africa.semicolon.sendAm.data.models;
 
 import africa.semicolon.sendAm.data.repositories.PackageRepository;
 import africa.semicolon.sendAm.data.repositories.PackageRepositoryImplementation;
+import africa.semicolon.sendAm.data.repositories.UserRepositoryImplementation;
 import africa.semicolon.sendAm.dtos.requests.AddPackageRequest;
 import africa.semicolon.sendAm.dtos.requests.RegisterPackageRequest;
 import africa.semicolon.sendAm.dtos.requests.UpdateTrackingInfoRequest;

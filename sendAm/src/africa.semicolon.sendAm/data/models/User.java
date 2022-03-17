@@ -8,6 +8,17 @@ public class User {
     private String phoneNumber;
     private String address;
 
+    public User(String user, String email, String fullName, String phoneNumber, String address) {
+        User = user;
+        this.email = email;
+        this.fullName = fullName;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+    }
+
+    public User(){
+    }
+
 
     public String getAddress(){
         return address;

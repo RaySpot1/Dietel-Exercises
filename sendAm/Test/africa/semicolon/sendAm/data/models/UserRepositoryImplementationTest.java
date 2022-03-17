@@ -1,5 +1,7 @@
 package africa.semicolon.sendAm.data.models;
 
+import africa.semicolon.sendAm.data.repositories.UserRepository;
+import africa.semicolon.sendAm.data.repositories.UserRepositoryImplementation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -18,9 +20,8 @@ class UserRepositoryImplementationTest {
     public void UserSavesTest(){
         //given
         User aUser = new User();
-
-        //when i try to save the save;
-//            aUser.setEmail("deolaoladeji@gmail.com");
+//        User newUser = new User();
+        aUser.setEmail("deolaoladeji@gmail.com");
         User savedUser = customer.save(aUser);
         //assert that the return, has an email;
         assertEquals("deolaoladeji@gmail.com",savedUser.getEmail());
@@ -29,11 +30,15 @@ class UserRepositoryImplementationTest {
 
     }
     @Test
-    void UserSaveTest(){
+    void UsersSaveTest(){
         //given
         User firstUser = new User();
         User secondUser = new User();
         User ThirdUser = new User();
+
+        firstUser.setEmail("tee@gmail.com");
+        secondUser.setEmail("ted@gmail.com");
+        ThirdUser.setEmail("tea@gmail.com");
         //when
         customer.save(firstUser);
         customer.save(secondUser);
@@ -53,6 +58,9 @@ class UserRepositoryImplementationTest {
         User secondUser = new User();
         User ThirdUser = new User();
         //when
+        firstUser.setEmail("tee@gmail.com");
+        secondUser.setEmail("ted@gmail.com");
+        ThirdUser.setEmail("tea@gmail.com");
         customer.save(firstUser);
         customer.save(secondUser);
         customer.save(ThirdUser);
@@ -67,12 +75,15 @@ class UserRepositoryImplementationTest {
         User secondUser = new User();
         User ThirdUser = new User();
         //when
+        firstUser.setEmail("tee@gmail.com");
+        secondUser.setEmail("ted@gmail.com");
+        ThirdUser.setEmail("tea@gmail.com");
         customer.save(firstUser);
         customer.save(secondUser);
         customer.save(ThirdUser);
     }
     @Test
-    void findByIdWorks_AfterDeleteByUser(){
+    void confirmUserDeletionTest(){
         saveThreeUsers();
         customer.delete("ted@gmail.com");
 
@@ -81,11 +92,12 @@ class UserRepositoryImplementationTest {
 
     }
     @Test
-    void saveNewEmailAfterADelete_givesCorrectPackageIdTest(){
+    void saveANewUserEmailAfterDelete_givesCorrectPackageIdTest(){
         //given
         saveThreeUsers();
-        customer.delete("del@gmail.com");
-        User savedUser=customer.save(new User());
+       User fourthUser= new User();
+        fourthUser.setEmail("del@gmail.com");
+        User savedUser = customer.save(fourthUser);
         assertEquals("del@gmail.com",savedUser.getEmail());
     }
     @Test
@@ -101,9 +113,10 @@ class UserRepositoryImplementationTest {
 
         customer.delete(ThirdUser);
         assertEquals(2,customer.count());
-        assertNull(customer.findByEmail("rate34@gmail.com"));
+//        assertNull(customer.findByEmail("tea@gmail.com"));
 
     }
+
     @Test
     void findAllTest(){
         saveThreeUsers();

@@ -1,8 +1,8 @@
 package africa.semicolon.sendAm.services;
 
 import africa.semicolon.sendAm.data.models.User;
-import africa.semicolon.sendAm.data.models.UserRepository;
-import africa.semicolon.sendAm.data.models.UserRepositoryImplementation;
+import africa.semicolon.sendAm.data.repositories.UserRepository;
+import africa.semicolon.sendAm.data.repositories.UserRepositoryImplementation;
 import africa.semicolon.sendAm.dtos.responses.FindUserResponse;
 import africa.semicolon.sendAm.dtos.responses.RegisterUserRequest;
 import africa.semicolon.sendAm.dtos.responses.RegisterUserResponse;

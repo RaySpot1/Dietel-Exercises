@@ -21,14 +21,15 @@ class UserServiceImplementationTest {
     @Test
     void afterRegister_repositoryContainsOneElement() {
 //        given
-        RegisterUserRequest registerForm = new RegisterUserRequest();
-        registerForm.setFirstName("David");
-        registerForm.setLastName("Oludare");
-        registerForm.setEmailAddress("seniorDevDevil@Gmail.com");
-        registerForm.setAddress("Code Cold Well");
-        registerForm.setPhoneNumber("2MillionDollars");
+//        RegisterUserRequest registerForm = new RegisterUserRequest();
+//        registerForm.setFirstName("David");
+//        registerForm.setLastName("Oludare");
+//        registerForm.setEmailAddress("seniorDevDevil@Gmail.com");
+//        registerForm.setAddress("Code Cold Well");
+//        registerForm.setPhoneNumber("2MillionDollars");
+        createRegisterForm();
 //        when
-        userService.register(registerForm);
+        userService.register(createRegisterForm());
 
 //        assert
         assertEquals(1, userService.getRepository().count());
