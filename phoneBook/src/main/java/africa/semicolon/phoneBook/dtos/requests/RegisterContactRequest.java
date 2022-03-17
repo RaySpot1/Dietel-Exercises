@@ -3,7 +3,7 @@ package africa.semicolon.phoneBook.dtos.requests;
 import lombok.Data;
 
 @Data
-public class AddContactRequest {
+public class RegisterContactRequest {
     private String firstName;
     private String lastName;
     private String middleName;

@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @RequiredArgsConstructor //selected   variables and creates constructors with it.
 //@EqualsAndHashCode // create
 
-public class Contacts {
+public class Contact {
     @Id //tells the db url to generate automated id
     private String id;
     @NonNull
