@@ -4,8 +4,8 @@ import africa.semicolon.phoneBook.data.models.Contact;
 import lombok.*;
 
 @Data
-@Getter
-@Setter
+@NoArgsConstructor
+
 public class FindContactResponse {
     private String firstName;
     private String lastName;
@@ -15,15 +15,11 @@ public class FindContactResponse {
     private Contact contact;
 
 
-//    public FindContactResponse(Contact contact){
+//    public FindContactResponse() {
 //        firstName = contact.getFirstName();
 //        lastName = contact.getLastName();
 //        middleName = contact.getMiddleName();
 //        mobile = contact.getMobile();
 //        office = contact.getOffice();
-//    }
-//
-//    public FindContactResponse() {
-//
 //    }
 }

@@ -12,7 +12,7 @@ public interface ContactService {
     RegisterContactResponse saveContact(RegisterContactRequest contactForm);
     ContactRepository getRepository();
 
-    FindContactResponse findContactByName(String name);
+    List<FindContactResponse> findContactByName(String name);
 
     RegisterContactResponse deleteContact(String name, String mobile);
 }

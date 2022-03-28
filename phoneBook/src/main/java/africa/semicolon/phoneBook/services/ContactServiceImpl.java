@@ -16,37 +16,37 @@ import java.util.List;
 @Service
 public class ContactServiceImpl implements ContactService {
     @Autowired
-    private ContactRepository contactRepository;
+    private ContactRepository db;
 
     @Override
     public RegisterContactResponse saveContact(RegisterContactRequest request) {
         Contact contact = ModelMapper.map(request);
-        Contact theContact = contactRepository.save(contact);
+        Contact theContact = db.save(contact);
         return ModelMapper.map(theContact);
 
     }
 
     @Override
     public ContactRepository getRepository() {
-        return contactRepository;
+        return db;
     }
 
     private List<Contact> findContactByFirstNameOrMiddleNameOrLastName(String name){
         List<Contact> contacts = new ArrayList<>();
-        contacts.addAll(contactRepository.findContactsByFirstName(name));
-        contacts.addAll(contactRepository.findContactByLastName(name));
-        contacts.addAll(contactRepository.findContactByMiddleName(name));
+        contacts.addAll(db.findContactsByFirstName(name));
+        contacts.addAll(db.findContactByLastName(name));
+        contacts.addAll(db.findContactByMiddleName(name));
         return contacts;
     }
 
     @Override
-    public FindContactResponse findContactByName(String name){
+    public List<FindContactResponse> findContactByName(String name){
         List<Contact> contacts = findContactByFirstNameOrMiddleNameOrLastName(name);
         if(contacts.isEmpty()) throw new IllegalArgumentException(name + "not found");
         List<FindContactResponse> responses = new ArrayList<>();
 
         contacts.forEach(contact -> {
-            responses.add(new FindContactResponse(contact));
+            responses.add(ModelMapper.contactToFindContactResponse(contact));
         });
         return responses;
     }
@@ -57,7 +57,7 @@ public class ContactServiceImpl implements ContactService {
         List<Contact> theContact = findContactByFirstNameOrMiddleNameOrLastName(name);
         theContact.forEach(contact -> {
             if(contact.getMobile().equals(mobile))
-                contactRepository.delete(contact);
+                db.delete(contact);
         });
             RegisterContactResponse response = new RegisterContactResponse();
             response.setMessage("Contact Deleted");

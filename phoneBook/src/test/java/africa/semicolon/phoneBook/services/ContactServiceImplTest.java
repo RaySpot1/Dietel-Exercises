@@ -3,6 +3,7 @@ package africa.semicolon.phoneBook.services;
 import africa.semicolon.phoneBook.dtos.requests.RegisterContactRequest;
 import africa.semicolon.phoneBook.dtos.response.RegisterContactResponse;
 import africa.semicolon.phoneBook.dtos.response.FindContactResponse;
+import africa.semicolon.phoneBook.exception.ContactNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -39,7 +40,7 @@ class ContactServiceImplTest {
         registerForm.setLastName("Friday");
         registerForm.setMobile("2222");
         contactService.saveContact(registerForm);
-        assertThrows(RegisterFailureException.class, () -> contactService.register(registerForm));
+        assertThrows(ContactNotFoundException.class, () -> contactService.saveContact(registerForm));
 
     }
 
@@ -65,7 +66,7 @@ class ContactServiceImplTest {
         RegisterContactRequest registerForm = createRegisterForm();
         contactService.saveContact(registerForm);
 
-        FindContactResponse response =  contactService.findContactByName(registerForm.getFirstName());
+        FindContactResponse response = (FindContactResponse) contactService.findContactByName(registerForm.getFirstName());
         assertEquals("Blessing", response.getFirstName());
         assertEquals("3333", response.getMobile());
     }
